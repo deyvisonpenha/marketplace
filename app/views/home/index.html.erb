@@ -1,0 +1,31 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">Our Logo</a>
+  <form class="form-inline">
+    <a class="btn btn-outline-primary" href="/login" role="button">
+    Login
+    </a>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/signup" role="button">
+      Sign Up
+      </a>
+    </div>
+  </form>
+</nav>
+
+
+<h1>List Products</h1>
+    
+<ul class="list-group list-group-horizontal">
+<% @products.each do |product| %>
+    <li class="list-group-item">
+        <div class="card" style="width: 18rem;">
+        <%= image_tag("teste.jpeg", class:"card-img-top", size: "20x150") %>
+            <div class="card-body">
+                <h5 class="card-title"><%= product["name"] %></h5>
+                <p class="card-text"><%= product["description"] %> </p>
+                <span class="badge badge-success"><h3>R$<%= product["price"] %></h3></span>
+            </div>
+        </div>
+    </li>
+<% end %>
+</ul>
