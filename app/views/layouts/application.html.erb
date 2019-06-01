@@ -15,6 +15,49 @@
     <a class="navbar-brand" href="/">Our Logo</a>
     <p class="navbar-brand">Company Name</p>
     <form class="form-inline">
+    <% if cookies[:status] == "Logado"%>
+        <div class="dropdown">
+          <button type="button" class="nav-button btn-lg" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+            <span class="far fa-user mr-2"></span>
+            <%= cookies[:name] %>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-outline-success" data-toggle="">
+          <i class="fas fa-shopping-bag"></i>
+          Compras
+        </button>
+      <div class="dropdown">
+        <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="far fa-star"></i>Favoritos
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Mais Itens</a>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-outline-warning navbar-button" data-toggle="">
+        <i class="fas fa-cart-plus"></i>
+        Carrinho
+      </button>
+
+        <div style="padding-left: 10px;">
+          <a class="btn btn-outline-danger" href="logout" role="button">
+          <i class="fas fa-sign-out-alt"></i>Sair
+          </a>
+        </div>
+    <% else %>
       <a class="btn btn-outline-primary" href="login_form" role="button">
       Login
       </a>
@@ -23,6 +66,7 @@
         Sign Up
         </a>
       </div>
+    <%end%>
     </form>
   </nav>
 
